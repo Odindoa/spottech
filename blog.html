@@ -4,14 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Spot Tech - Blog & News</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Stay updated with the latest cybersecurity insights, industry trends, and expert news from Spot Tech International." />
+  <meta name="keywords" content="Cybersecurity, Trends, Data Privacy, Phishing, Spot Tech" />
+  
   <link href="styles/output.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* For smooth mobile nav toggle */
+    /* Mobile menu toggle */
     #mobile-menu {
       display: none;
     }
-    #mobile-menu:checked ~ nav.mobile-menu {
+    #mobile-menu:checked ~ .mobile-menu {
       display: block;
     }
   </style>
@@ -32,7 +37,7 @@
     <!-- Mobile menu button -->
     <div class="sm:hidden">
       <input type="checkbox" id="mobile-menu" class="hidden" />
-      <label for="mobile-menu" class="cursor-pointer">
+      <label for="mobile-menu" class="cursor-pointer" aria-label="Toggle mobile menu">
         <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
           <path d="M4 6h16M4 12h16M4 18h16"></path>
@@ -46,7 +51,7 @@
         <li><a href="index.html" class="hover:text-blue-400 transition">Home</a></li>
         <li><a href="about.html" class="hover:text-blue-400 transition">About</a></li>
         <li><a href="services.html" class="hover:text-blue-400 transition">Services</a></li>
-        <li><a href="blog.html" class="text-blue-400 font-bold transition">Blog & News</a></li>
+        <li><a href="blog.html" class="text-blue-400 font-bold transition" aria-current="page">Blog & News</a></li>
         <li><a href="contact.html" class="hover:text-blue-400 transition">Contact</a></li>
       </ul>
     </nav>
@@ -57,7 +62,7 @@
         <li><a href="index.html" class="block hover:text-blue-400 transition">Home</a></li>
         <li><a href="about.html" class="block hover:text-blue-400 transition">About</a></li>
         <li><a href="services.html" class="block hover:text-blue-400 transition">Services</a></li>
-        <li><a href="blog.html" class="block text-blue-400 font-bold transition">Blog & News</a></li>
+        <li><a href="blog.html" class="block text-blue-400 font-bold transition" aria-current="page">Blog & News</a></li>
         <li><a href="contact.html" class="block hover:text-blue-400 transition">Contact</a></li>
       </ul>
     </nav>
@@ -81,14 +86,15 @@
       <article
         class="bg-gray-800 rounded-lg shadow-md hover:shadow-blue-500/40 transition overflow-hidden flex flex-col">
         <img src="https://images.unsplash.com/photo-1556741533-f6acd647d2fb?auto=format&fit=crop&w=600&q=80"
-          alt="Cybersecurity Trends 2025" class="w-full h-40 object-cover" />
+          alt="Cybersecurity Trends 2025" class="w-full h-40 object-cover" loading="lazy" />
         <div class="p-6 flex flex-col flex-grow">
           <h3
             class="text-xl sm:text-2xl font-semibold mb-2 text-blue-300 hover:text-blue-400 cursor-pointer transition-colors">
             Top Cybersecurity Trends to Watch in 2025</h3>
           <p class="text-gray-400 mb-4 flex-grow">Explore the emerging cybersecurity technologies and threats shaping the landscape this year. Stay ahead by understanding what’s coming next.</p>
-          <a href="#" class="text-blue-400 font-semibold hover:underline mt-auto inline-block">Read
-            More →</a>
+          <a href="#" class="text-blue-400 font-semibold hover:underline mt-auto inline-block" aria-label="Read more about Top Cybersecurity Trends to Watch in 2025">
+            Read More → <span class="sr-only">Top Cybersecurity Trends to Watch in 2025</span>
+          </a>
         </div>
       </article>
 
@@ -96,14 +102,15 @@
       <article
         class="bg-gray-800 rounded-lg shadow-md hover:shadow-blue-500/40 transition overflow-hidden flex flex-col">
         <img src="https://images.unsplash.com/photo-1555617117-caae3a3b02bf?auto=format&fit=crop&w=600&q=80"
-          alt="Phishing Attacks" class="w-full h-40 object-cover" />
+          alt="Phishing Attacks" class="w-full h-40 object-cover" loading="lazy" />
         <div class="p-6 flex flex-col flex-grow">
           <h3
             class="text-xl sm:text-2xl font-semibold mb-2 text-blue-300 hover:text-blue-400 cursor-pointer transition-colors">
             How to Protect Your Business from Phishing Attacks</h3>
           <p class="text-gray-400 mb-4 flex-grow">Phishing remains one of the most common cyber threats. Learn best practices to defend your organization and educate your employees.</p>
-          <a href="#" class="text-blue-400 font-semibold hover:underline mt-auto inline-block">Read
-            More →</a>
+          <a href="#" class="text-blue-400 font-semibold hover:underline mt-auto inline-block" aria-label="Read more about How to Protect Your Business from Phishing Attacks">
+            Read More → <span class="sr-only">How to Protect Your Business from Phishing Attacks</span>
+          </a>
         </div>
       </article>
 
@@ -111,34 +118,34 @@
       <article
         class="bg-gray-800 rounded-lg shadow-md hover:shadow-blue-500/40 transition overflow-hidden flex flex-col">
         <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80"
-          alt="Data Privacy" class="w-full h-40 object-cover" />
+          alt="Data Privacy" class="w-full h-40 object-cover" loading="lazy" />
         <div class="p-6 flex flex-col flex-grow">
           <h3
             class="text-xl sm:text-2xl font-semibold mb-2 text-blue-300 hover:text-blue-400 cursor-pointer transition-colors">
             Data Privacy in the Digital Age: What You Need to Know</h3>
           <p class="text-gray-400 mb-4 flex-grow">Privacy regulations are evolving rapidly. Discover how to stay compliant and safeguard customer data effectively.</p>
-          <a href="#" class="text-blue-400 font-semibold hover:underline mt-auto inline-block">Read
-            More →</a>
+          <a href="#" class="text-blue-400 font-semibold hover:underline mt-auto inline-block" aria-label="Read more about Data Privacy in the Digital Age: What You Need to Know">
+            Read More → <span class="sr-only">Data Privacy in the Digital Age: What You Need to Know</span>
+          </a>
         </div>
       </article>
 
     </section>
 
     <!-- Pagination -->
-    <nav class="flex justify-center mt-12 space-x-3 flex-wrap gap-2">
-      <button class="px-3 py-1 bg-gray-700 rounded-md text-gray-400 cursor-not-allowed" disabled>Prev</button>
-      <button class="px-3 py-1 bg-blue-600 rounded-md text-white font-semibold hover:bg-blue-700">1</button>
-      <button class="px-3 py-1 bg-gray-700 rounded-md text-gray-400 hover:bg-gray-600">2</button>
-      <button class="px-3 py-1 bg-gray-700 rounded-md text-gray-400 hover:bg-gray-600">3</button>
-      <button class="px-3 py-1 bg-gray-700 rounded-md text-gray-400 hover:bg-gray-600">Next</button>
+    <nav class="flex justify-center mt-12 space-x-3 flex-wrap gap-2" aria-label="Pagination">
+      <span class="px-3 py-1 bg-gray-700 rounded-md text-gray-400 cursor-not-allowed" aria-disabled="true">Prev</span>
+      <a href="blog.html?page=1" class="px-3 py-1 bg-blue-600 rounded-md text-white font-semibold hover:bg-blue-700" aria-current="page">1</a>
+      <a href="blog.html?page=2" class="px-3 py-1 bg-gray-700 rounded-md text-gray-400 hover:bg-gray-600">2</a>
+      <a href="blog.html?page=3" class="px-3 py-1 bg-gray-700 rounded-md text-gray-400 hover:bg-gray-600">3</a>
+      <a href="blog.html?page=2" class="px-3 py-1 bg-gray-700 rounded-md text-gray-400 hover:bg-gray-600">Next</a>
     </nav>
 
   </main>
 
   <!-- Footer -->
-  <footer class="text-center p-6 bg-gray-800 mt-16 border-t border-gray-700 text-xs sm:text-sm">
-    <p class="text-gray-400">&copy; 2025 Spot Tech Int'l. All rights reserved.</p>
-    <p class="text-gray-500 mt-2">Kisumu, Kenya | info@spottechintl.com</p>
+  <footer class="bg-gray-800 text-gray-400 text-center p-6 text-sm">
+    &copy; 2025 Spot Tech International. All rights reserved.
   </footer>
 
 </body>
