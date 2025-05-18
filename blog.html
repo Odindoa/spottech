@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spot Tech Int'l - Blog & News</title>
+  <link href="styles/output.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Header -->
+  <header class="p-6 bg-gray-800 shadow-md flex justify-between items-center">
+    <h1 class="text-2xl font-bold tracking-wide text-blue-400">Spot Tech Int'l</h1>
+    <nav>
+      <ul class="flex space-x-6 text-sm font-semibold">
+        <li><a href="index.html" class="hover:text-blue-400 transition">Home</a></li>
+        <li><a href="about.html" class="hover:text-blue-400 transition">About</a></li>
+        <li><a href="services.html" class="hover:text-blue-400 transition">Services</a></li>
+        <li><a href="blog.html" class="text-blue-400 font-bold transition">Blog & News</a></li>
+        <li><a href="contact.html" class="hover:text-blue-400 transition">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-[url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center text-white py-28 px-4">
+    <div class="max-w-4xl mx-auto text-center backdrop-blur-md bg-black/50 p-10 rounded-lg">
+      <h2 class="text-5xl font-extrabold mb-4 text-blue-300">Latest Cybersecurity Insights & News</h2>
+      <p class="text-lg text-gray-200 mb-8">Stay updated with industry trends, expert tips, and breaking cybersecurity news from Spot Tech Int'l.</p>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-6 py-20">
+
+    <!-- Blog Posts Grid -->
+    <section class="grid gap-12 md:grid-cols-3">
+
+      <!-- Blog Post 1 -->
+      <article class="bg-gray-800 rounded-lg shadow-md hover:shadow-blue-500/40 transition overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1556741533-f6acd647d2fb?auto=format&fit=crop&w=600&q=80" alt="Cybersecurity Trends 2025" class="w-full h-40 object-cover" />
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2 text-blue-300 hover:text-blue-400 cursor-pointer">Top Cybersecurity Trends to Watch in 2025</h3>
+          <p class="text-gray-400 mb-4">Explore the emerging cybersecurity technologies and threats shaping the landscape this year. Stay ahead by understanding what’s coming next.</p>
+          <a href="#" class="text-blue-400 font-semibold hover:underline">Read More →</a>
+        </div>
+      </article>
+
+      <!-- Blog Post 2 -->
+      <article class="bg-gray-800 rounded-lg shadow-md hover:shadow-blue-500/40 transition overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1555617117-caae3a3b02bf?auto=format&fit=crop&w=600&q=80" alt="Phishing Attacks" class="w-full h-40 object-cover" />
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2 text-blue-300 hover:text-blue-400 cursor-pointer">How to Protect Your Business from Phishing Attacks</h3>
+          <p class="text-gray-400 mb-4">Phishing remains one of the most common cyber threats. Learn best practices to defend your organization and educate your employees.</p>
+          <a href="#" class="text-blue-400 font-semibold hover:underline">Read More →</a>
+        </div>
+      </article>
+
+      <!-- Blog Post 3 -->
+      <article class="bg-gray-800 rounded-lg shadow-md hover:shadow-blue-500/40 transition overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Data Privacy" class="w-full h-40 object-cover" />
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2 text-blue-300 hover:text-blue-400 cursor-pointer">Data Privacy in the Digital Age: What You Need to Know</h3>
+          <p class="text-gray-400 mb-4">Privacy regulations are evolving rapidly. Discover how to stay compliant and safeguard customer data effectively.</p>
+          <a href="#" class="text-blue-400 font-semibold hover:underline">Read More →</a>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Pagination -->
+    <nav class="flex justify-center mt-16 space-x-4">
+      <button class="px-4 py-2 bg-gray-700 rounded-md text-gray-400 cursor-not-allowed" disabled>Prev</button>
+      <button class="px-4 py-2 bg-blue-600 rounded-md text-white font-semibold hover:bg-blue-700">1</button>
+      <button class="px-4 py-2 bg-gray-700 rounded-md text-gray-400 hover:bg-gray-600">2</button>
+      <button class="px-4 py-2 bg-gray-700 rounded-md text-gray-400 hover:bg-gray-600">3</button>
+      <button class="px-4 py-2 bg-gray-700 rounded-md text-gray-400 hover:bg-gray-600">Next</button>
+    </nav>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center p-6 bg-gray-800 mt-16 border-t border-gray-700">
+    <p class="text-sm text-gray-400">&copy; 2025 Spot Tech Int'l. All rights reserved.</p>
+    <p class="text-xs text-gray-500 mt-2">Kisumu, Kenya | info@spottechintl.com</p>
+  </footer>
+
+</body>
+</html>
