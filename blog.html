@@ -8,16 +8,21 @@
   <!-- SEO Meta -->
   <meta name="description" content="Stay updated with the latest cybersecurity insights, industry trends, and expert news from Spot Tech International." />
   <meta name="keywords" content="Cybersecurity, Trends, Data Privacy, Phishing, Spot Tech" />
-  
+  <meta name="author" content="Spot Tech International" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Spot Tech - Blog & News" />
+  <meta property="og:description" content="Stay updated with the latest cybersecurity insights, industry trends, and expert news from Spot Tech International." />
+  <meta property="og:image" content="assets/logo.png" />
+  <meta property="og:url" content="https://spottech.example.com/blog.html" />
+  <meta property="og:type" content="website" />
+
   <link href="styles/output.css" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Mobile menu toggle */
-    #mobile-menu {
-      display: none;
-    }
-    #mobile-menu:checked ~ .mobile-menu {
-      display: block;
+    /* Focus styles for keyboard users */
+    a:focus-visible {
+      outline: 2px solid #3b82f6; /* Tailwind blue-500 */
+      outline-offset: 2px;
     }
   </style>
 </head>
@@ -37,7 +42,7 @@
     <!-- Mobile menu button -->
     <div class="sm:hidden">
       <input type="checkbox" id="mobile-menu" class="hidden" />
-      <label for="mobile-menu" class="cursor-pointer" aria-label="Toggle mobile menu">
+      <label for="mobile-menu" id="mobile-menu-label" class="cursor-pointer" aria-label="Toggle mobile menu" aria-expanded="false">
         <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
           <path d="M4 6h16M4 12h16M4 18h16"></path>
@@ -45,7 +50,7 @@
       </label>
     </div>
 
-    <!-- Navigation -->
+    <!-- Navigation desktop -->
     <nav class="hidden sm:block">
       <ul class="flex space-x-6 text-sm font-semibold">
         <li><a href="index.html" class="hover:text-blue-400 transition">Home</a></li>
@@ -57,7 +62,7 @@
     </nav>
 
     <!-- Mobile menu -->
-    <nav class="mobile-menu w-full sm:hidden mt-4 px-4 hidden bg-gray-700 rounded-md">
+    <nav class="w-full sm:hidden mt-4 px-4 bg-gray-700 rounded-md hidden" id="mobile-menu-nav">
       <ul class="flex flex-col space-y-3 text-sm font-semibold">
         <li><a href="index.html" class="block hover:text-blue-400 transition">Home</a></li>
         <li><a href="about.html" class="block hover:text-blue-400 transition">About</a></li>
@@ -123,9 +128,9 @@
           <h3
             class="text-xl sm:text-2xl font-semibold mb-2 text-blue-300 hover:text-blue-400 cursor-pointer transition-colors">
             Data Privacy in the Digital Age: What You Need to Know</h3>
-          <p class="text-gray-400 mb-4 flex-grow">Privacy regulations are evolving rapidly. Discover how to stay compliant and safeguard customer data effectively.</p>
-          <a href="#" class="text-blue-400 font-semibold hover:underline mt-auto inline-block" aria-label="Read more about Data Privacy in the Digital Age: What You Need to Know">
-            Read More → <span class="sr-only">Data Privacy in the Digital Age: What You Need to Know</span>
+          <p class="text-gray-400 mb-4 flex-grow">Understand how regulations and technologies are evolving to protect user data. Tips on how to ensure compliance and maintain trust.</p>
+          <a href="#" class="text-blue-400 font-semibold hover:underline mt-auto inline-block" aria-label="Read more about Data Privacy in the Digital Age">
+            Read More → <span class="sr-only">Data Privacy in the Digital Age</span>
           </a>
         </div>
       </article>
@@ -133,20 +138,35 @@
     </section>
 
     <!-- Pagination -->
-    <nav class="flex justify-center mt-12 space-x-3 flex-wrap gap-2" aria-label="Pagination">
-      <span class="px-3 py-1 bg-gray-700 rounded-md text-gray-400 cursor-not-allowed" aria-disabled="true">Prev</span>
-      <a href="blog.html?page=1" class="px-3 py-1 bg-blue-600 rounded-md text-white font-semibold hover:bg-blue-700" aria-current="page">1</a>
-      <a href="blog.html?page=2" class="px-3 py-1 bg-gray-700 rounded-md text-gray-400 hover:bg-gray-600">2</a>
-      <a href="blog.html?page=3" class="px-3 py-1 bg-gray-700 rounded-md text-gray-400 hover:bg-gray-600">3</a>
-      <a href="blog.html?page=2" class="px-3 py-1 bg-gray-700 rounded-md text-gray-400 hover:bg-gray-600">Next</a>
+    <nav aria-label="Pagination" class="mt-12 flex justify-center space-x-2 text-sm font-semibold text-gray-300">
+      <a href="#" class="px-3 py-2 rounded-md hover:bg-gray-700 hover:text-blue-400 transition">Prev</a>
+      <a href="#" aria-current="page" class="px-3 py-2 rounded-md bg-blue-600 text-white">1</a>
+      <a href="#" class="px-3 py-2 rounded-md hover:bg-gray-700 hover:text-blue-400 transition">2</a>
+      <a href="#" class="px-3 py-2 rounded-md hover:bg-gray-700 hover:text-blue-400 transition">3</a>
+      <a href="#" class="px-3 py-2 rounded-md hover:bg-gray-700 hover:text-blue-400 transition">Next</a>
     </nav>
 
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-400 text-center p-6 text-sm">
+  <footer class="bg-gray-800 text-gray-400 py-8 px-4 mt-20 text-center text-sm">
     &copy; 2025 Spot Tech International. All rights reserved.
   </footer>
 
+  <script>
+    // Toggle aria-expanded on mobile menu label based on checkbox state
+    const checkbox = document.getElementById('mobile-menu');
+    const label = document.getElementById('mobile-menu-label');
+    const mobileNav = document.getElementById('mobile-menu-nav');
+
+    checkbox.addEventListener('change', () => {
+      const expanded = checkbox.checked;
+      label.setAttribute('aria-expanded', expanded);
+      if (expanded) {
+        mobileNav.classList.remove('hidden');
+      } else {
+        mobileNav.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 </html>
